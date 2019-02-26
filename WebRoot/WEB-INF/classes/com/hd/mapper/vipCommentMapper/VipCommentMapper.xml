@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.hd.mapper.vipCommentMapper.VipCommentMapper">
+		
+		<select id="getAllNonCommentByAccount" resultType="Consumption">
+			select id,b_id,type,money,date,bus_account from consumption where vip_account=#{arg0}
+			 and has_comment=0 limit #{arg2},#{arg1}
+		</select>
+		
+		<insert id="addComment" useGeneratedKeys="true" keyProperty="id" parameterType="Comment">
+			insert into comment (c_id,star,content,date) values (#{c_id},#{star},#{content},#{date})
+		</insert>
+		
+		<select id="getNumberOfNonComment" parameterType="String" resultType="int">
+	    	select count(id) from consumption where vip_account=#{vip_account} and has_comment=0
+	    </select>
+	</mapper>

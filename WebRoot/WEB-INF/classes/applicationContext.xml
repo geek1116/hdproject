@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+     http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	
+	<!-- 配置@Autowired等注解 -->
+   <context:annotation-config />
+ 	
+ 	<!-- 配置数据库源  -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+	  <property name="driverClassName">  
+	      <value>com.mysql.jdbc.Driver</value>  
+	  </property>  
+	  <property name="url">
+	      <value>jdbc:mysql://localhost:3306/hdproject?characterEncoding=UTF-8</value>  
+	  </property>  
+	  <property name="username">  
+	      <value>root</value>
+	  </property>  
+	  <property name="password">  
+	      <value>zyn123wds</value>  
+	  </property>  	
+	</bean>
+	
+	<!-- 为数据源配置事务管理器 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- 配置用于捕获全局异常的bean -->
+    <bean id="exceptionHandler" class="com.hd.filter.GlobalExceptionHandler"/>
+	
+	
+	
+	<!-- 下面是配置spring与mybatis的整合  -->
+	
+	 <!-- 创建sqlSessionFactory工厂的bean -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="typeAliasesPackage" value="com.hd.pojo" /> 
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+ 
+ 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描所有dao接口的实现，加入到ioc容器中  -->
+		<property name="basePackage" value="com.hd.mapper"/>
+		<property name="sqlSessionFactoryBeanName" value="sqlSession"/>
+	</bean>
+	
+</beans>
