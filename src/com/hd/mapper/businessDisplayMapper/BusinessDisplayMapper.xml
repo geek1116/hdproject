@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.hd.mapper.businessDisplayMapper.BusinessDisplayMapper">
+	
+		<select id="getBusinessByType" resultType="Business">
+			select id,b_name,type,address,b_telephone,postcode,c_name,c_gender,
+	        c_position,c_telephone,c_cellphone,c_fax from business join comment_index on business.id = comment_index.b_id where status='启用' and type=#{arg0} order by point desc limit #{arg2},#{arg1}
+		</select>
+		
+		<select id="getProductByBusId" resultType="Product">
+			select id,name,price,vip_price,introduction from product where b_id=#{arg0} limit #{arg2},#{arg1}
+		</select>
+		
+		<select id="searchBusinessByKey" resultType="Business">
+			select id,b_name,type,address,b_telephone,postcode,c_name,c_gender,
+	        c_position,c_telephone,c_cellphone,c_fax from business join comment_index on business.id = comment_index.b_id where status='启用' and b_name like "%"#{arg0}"%" order by point desc limit #{arg2},#{arg1}
+		</select>
+		
+		<select id="getCommentByBusId" resultType="Comment">
+			select comment.id,c_id,star,content,comment.date from comment join consumption on comment.c_id=consumption.id
+				 where b_id=#{arg0} limit #{arg2},#{arg1}
+		</select>
+		
+		<select id="getBusinessPoint" resultType="Comment_index">
+			select B_id,comment_count,point from comment_index where b_id = #{id}
+		</select>
+		
+	</mapper>

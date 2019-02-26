@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hd.mapper.businessAccountMapper.AccountMapper">
+	<resultMap id="accountMap" type="Account">
+		<id property="account" column="account" javaType="java.lang.String"></id>
+		<result property="password" column="password" javaType="java.lang.String"></result>
+		<result property="b_id" column="b_id" javaType="java.lang.Integer"></result>
+		<result property="account_type" column="account_type" javaType="java.lang.Integer"></result>
+		<result property="state" column="state" javaType="java.lang.Integer"></result>
+	</resultMap>
+
+	<update id="updateState">
+		update account set state=#{arg0} where account=#{arg1}
+	</update>
+	
+	<delete id="deleteAccount" parameterType="String">
+		delete from account where account=#{account}
+	</delete>
+	
+	<update id="initPassword" parameterType="String">
+		update account set password=MD5("111111") where account=#{account}
+	</update>
+	
+	<select id="selectAccountById" parameterType="String" resultMap="accountMap">
+		select * from account where account=#{account}
+	</select>
+	
+	<insert id="addAccount" keyProperty="account"> 
+	    insert into account(account,password,b_id,account_type,state) values(#{account},MD5(#{password}),#{b_id},#{account_type},#{state})
+	</insert>
+	
+	<select id="selectAccounts" resultMap="accountMap">
+       select * from account where b_id=#{arg0} limit #{arg1},#{arg2}
+     </select>
+     
+     <select id="getNumeberOfAccount" parameterType="Integer" resultType="Integer" >
+       select count(account) from account where b_id=#{b_id}
+     </select>
+</mapper>
+
+	

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.hd.mapper.businessInfoMapper.BusinessInfoMapper">
+	
+	    <insert id="addBusiness" useGeneratedKeys="true" keyProperty="id" parameterType="Business">
+	        insert into business (b_name,type,address,b_telephone,postcode,c_name,c_gender,
+	        c_position,c_telephone,c_cellphone,c_fax,c_mail) values (#{b_name},#{type},#{address},#{b_telephone}
+	        ,#{postcode},#{c_name},#{c_gender},#{c_position},#{c_telephone},#{c_cellphone},#{c_fax},#{c_mail})
+	    </insert>
+	    
+	    <select id="getBusinessById" parameterType="int" resultType="Business">
+	    	select id,b_name,type,address,b_telephone,postcode,c_name,c_gender,
+	        c_position,c_telephone,c_cellphone,c_fax,c_mail,status from business where id = #{id}
+	    </select>
+	    
+	    <update id="updateBusinessById">
+	    	update business set b_name=#{arg0.b_name},type=#{arg0.type},address=#{arg0.address},
+	    	b_telephone=#{arg0.b_telephone},postcode=#{arg0.postcode},c_name=#{arg0.c_name},c_gender=#{arg0.c_gender},
+	        c_position=#{arg0.c_position},c_telephone=#{arg0.c_telephone},c_cellphone=#{arg0.c_cellphone},
+	        c_fax=#{arg0.c_fax},c_mail=#{arg0.c_mail} where id = #{arg1}
+	    </update>
+	    
+	    <insert id="addProduct" useGeneratedKeys="true" keyProperty="id">
+	        insert into product (b_id,name,price,vip_price,introduction) values (#{arg1},#{arg0.name},
+	        #{arg0.price},#{arg0.vip_price},#{arg0.introduction})
+	    </insert>
+	    
+	    <update id="updateProductById">
+	    	update product set name=#{name},price=#{price},vip_price=#{vip_price},introduction=#{introduction}
+	    		where id=#{id}
+	    </update>
+	    
+	    <select id="getAllProductByB_id" resultType="Product">
+	    	select id,name,price,vip_price,introduction from product where b_id=#{arg0} limit #{arg2},#{arg1}
+	    </select>
+	    
+	    <select id="getAllConsumptionByB_id" resultType="Consumption">
+	    	select id,vip_account,type,money,date,bus_account from consumption where b_id=#{b_id}
+	    </select>
+	    
+	    <select id="getAllRecharge_historyByB_id" resultType="Recharge_history">
+	    	select id,vip_account,money,date,bus_account from recharge_history join account 
+	    		on recharge_history.bus_account = account.account where b_id=#{b_id}
+	    </select>
+	    
+	    <delete id="deleteProductById">
+	    	delete from product where id=#{id}
+	    </delete>
+	        
+	    <select id="getNumberOfProduct" parameterType="int" resultType="int">
+	    	select count(id) from product where b_id=#{b_id}
+	    </select>
+	</mapper>
+

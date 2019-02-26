@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+ 
+ 	<!-- 扫描控制器注解包 -->
+    <context:component-scan base-package="com.hd.controller">
+          <context:include-filter type="annotation" 
+          expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    
+    
+    <!-- 开启注解方式声明事务管理 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+ 	
+ 	<!--  开启<mvc:annotation-driven>会自动注册RequestMappingHandlerMapping与RequestMappingHandlerAdapter两个Bean,
+ 	这是Spring MVC为@Controller分发请求所必需的,并且提供了数据绑定支持(即可以直接将请求的参数映射到方法参数的类),
+ 	和读写JSON的支持(默认Jackson)等功能。-->
+    <mvc:annotation-driven>
+    	<mvc:message-converters>
+    		<bean class="com.hd.filter.ResponseMappingJackson2HttpMessageConverter"/> <!--这里设置自定义的json转换器 -->
+    	</mvc:message-converters>
+    </mvc:annotation-driven>
+    
+    <!-- 放行静态资源 -->
+    <mvc:default-servlet-handler />
+    
+</beans>

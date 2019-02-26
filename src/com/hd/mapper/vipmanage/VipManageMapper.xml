@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hd.mapper.vipmanage.VipManageMapper">
+
+	<insert id="insertConsume" useGeneratedKeys="true" keyProperty="id"
+		parameterType="Consumption">
+		insert into consumption (id, b_id, vip_account, type,
+		money, date, bus_account)
+		values (#{id}, #{b_id}, #{vip_account},
+		#{type},
+		#{money}, #{date}, #{bus_account})
+	</insert>
+
+
+
+	<insert id="addVip" useGeneratedKeys="true" keyProperty="id"
+		parameterType="Vip">
+		insert into vip (account, login_password, consume_password, card_id, name,
+		sex, phone, address, email)
+		values (#{account}, #{login_password}, #{consume_password}, #{card_id},
+		#{name}, #{sex}, #{phone}, #{address}, #{email})
+	</insert>
+
+
+
+	<insert id="addVip_Card" useGeneratedKeys="true" keyProperty="id"
+		parameterType="Vipcard">
+		insert into vipcard (date, issuer_account)
+		values (#{date}, #{issuer_account})
+	</insert>
+
+
+	<insert id="recordRecharge" useGeneratedKeys="true" keyProperty="id"
+		parameterType="Recharge_history">
+		insert into recharge_history (vip_account, money, date, bus_account)
+		values (#{vip_account}, #{money}, #{date}, #{bus_account})
+	</insert>
+	
+	
+	
+	<update id="vipConsume">
+		update vipcard set balance = balance-#{balance} where id = #{id}
+	</update>
+
+
+
+	<update id="rechargeVip_Card">
+		update vipcard set balance = balance+#{balance} where id = #{id}
+	</update>
+
+
+
+	<select id="getVipAccount" parameterType="String" resultType="Vip">
+		select * from vip where card_id = #{id}
+	</select>
+
+</mapper>
+
