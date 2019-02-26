@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="loginManager.css">
+    <title>登录管理</title>
+  </head>
+  <body >
+    <div class="wrapper" >
+      <header id="head"></header>
+       <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1>登录管理</h1>
+          </div>
+          <div class="btn btn-primary btn-flat add" id="modify2"><i class="fa fa-lg fa-edit" ></i>修改密码</div>
+        </div>
+      </div>
+    </div>
+    <dialog id="modifyPassword" class="modifyPassword">
+      <div>
+         <h3 class="margin_bottom">修改密码</h3>
+         <label id="warning" class="warning"></label>
+      </div>
+         <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-5">原密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="原密码" id="oldpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">新密码</label>
+            <div class="col-md-6">
+              <input class="form-control  " type="password" placeholder="新密码" id="newpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">确认密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="确认密码" id="confirm">
+            </div>
+          </div>
+          <div >
+                <button id="sure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancel"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+        </form>
+    </dialog>  
+   <script type="text/javascript" src="loginManager.js"></script>
+  </body>
+</html>

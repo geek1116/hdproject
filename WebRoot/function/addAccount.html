@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="stylesheet" type="text/css" href="addAccount.css">
+    <title>账号信息管理</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+     <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1>账户管理</h1>
+          </div>
+          <div class="btn btn-primary btn-flat add" id="addAccountBtn"><i class="fa fa-lg fa-plus" ></i>增加账号</div>
+        </div>
+        <!--添加账号-->
+          <dialog id="addInformation" class="dialogAdd">
+            <h3>添加账号信息</h3>
+            <form>
+              <div class="form-group">
+                  <label class="control-label col-md-3 type">账号类型</label>
+                  <div class="col-md-8">
+                    <select class="form-control " autofocus id="account_type">
+                      <option value="2" >前台</option>
+                      <option value="3">经理</option>
+                    </select>
+                  </div>
+              </div>
+        
+              <div class="form-group">
+                    <label class="control-label col-md-3 init">是否启用</label>
+                    <div class="toggle init col-md-2">
+                      <label>
+                        <input type="checkbox" id="isStart"><span class="button-indecator" /></span>
+                      </label>
+                   </div> 
+              </div>
+              <br>
+              <div class="block" >
+                <button id="sure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancel"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+            </form>
+          </dialog>
+        <dialog id="isSure" class="dialogAdd">
+          <label class="isInit">是否要对此账号进行初始化密码？</label>
+           <div  >
+                <button id="sureInit" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancelInit"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+        </dialog>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="showMany">
+                  <label>显示</label>
+                  <select class="howMany">
+                    <option value='10'>10</option>
+                    <option value='25'>25</option>
+                    <option value='50'>50</option>
+                    <option value='100'>100</option>
+                  </select>
+                  <label>行</label>
+                </div>
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>账号</th>
+                      <th>账号类型</th>
+                      <th>是否启用</th>
+                      <th>初始化密码</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data">
+                  </tbody>
+                </table>
+                <table class="table-bordered paging">
+                  <tr>
+                    <td id="previous">上一页</td>
+                    <td id="one">1</td>
+                    <td id="two">2</td>
+                    <td id="three">3</td>
+                    <td id="ellipsis">...</td>
+                    <td id="next">下一页</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     <dialog id="loginInformation" class="modifyPassword">
+      <h3>登录信息</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-5">登录账号</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="登录账号" disabled="disabled" id="loginAccount2">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">登录密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="登录密码" disabled="disabled" id="loginPassword2">
+            </div>
+          </div>
+          <div >
+                <button id="sure2" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>
+          </div>
+        </form>
+     </dialog>
+     <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/plugins/pace.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/plugins/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="../js/plugins/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="addAccount.js"></script>
+    
+  </body>
+</html>

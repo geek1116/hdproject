@@ -1,0 +1,89 @@
+[genuitec-file-id="wc1-1"],[genuitec-lp-path="/hdproject/WebRoot/function/addAccount.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+
+.add{
+	border-radius: 5px !important;
+}
+.dialogAdd{
+	width: 400px;
+	height: 250px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+}
+.init{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.type{
+	margin-top: 10px; 
+}
+.block{
+	display: block;
+	margin-top: 75px;
+}
+
+a:link{
+	color: #fff;
+}
+a:active{
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+a:hover{
+	color: #fff !important;
+	font-size: 17px;
+	font-weight: bold !important;
+}
+.initPassword{
+	border-radius: 3px;
+}
+.isInit{
+	margin-top: 50px;
+	margin-bottom: 40px;
+}
+.modifyPassword{
+	width: 400px;
+	height: 250px;
+	border: 2px solid #ccc;
+	text-align: center;
+	border-radius: 5px;
+}
+.quit{
+	font-size: 16px;
+	color: #fff;
+	float: right;
+	margin: 14px 40px;
+}
+.person{
+	display: flex !important;
+	align-items: center !important;
+}
+.showMany{
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.howMany{
+	margin: 0 5px;
+	padding: 5px 10px;
+	border: 2px solid #ccc;
+	border-radius:2px;
+}
+select:hover select:focus{
+	border: 2px solid #009688;
+}
+.paging{
+	margin: 10px auto !important;
+	
+}
+.paging td {
+	padding: 10px 20px;
+	border: 1.5px solid #ccc !important; 
+}
+.paging td:hover {
+	background: #ddd;
+}

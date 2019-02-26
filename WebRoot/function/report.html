@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="report.css">
+    <title>报表统计</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+     <!--<header id="head"></header>-->
+     <div class="content-wrapper">
+        <div class="page-title">
+         <div>
+            <h1>报表统计</h1>
+         </div>
+         <div>
+	         <a href="../businessStatistics/consumptionHistory" ><div class="btn btn-primary btn-flat add right" id="memberReport">下载会员消费报表
+	         </div></a>
+	         <a href="../businessStatistics/rechargeHistory"><div class="btn btn-primary btn-flat add right" id="rechargeReport">下载会员充值报表
+	         </div></a>
+         </div>
+       </div>
+      </div>
+   </div>
+   <script type="text/javascript">
+      $(document).ready(function () {
+        $("#memberReport").click(function () {
+          $.get('../businessStatistics/consumptionHistory',function (){
+              
+          });
+        });
+        $("#rechargeReport").click(function () {
+          $.get('../businessStatistics/rechargeHistory',function (){
+              
+          });
+        });
+      });
+   </script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+.add{
+	border-radius: 5px !important;
+}
+.dialogAdd{
+	width: 550px;
+	height: 450px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+}
+.dialogDelete{
+	width: 350px;
+	height: 150px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 50px;
+}
+.type{
+	margin: 5px 0px !important; 
+}
+.block{
+	display: block;
+	margin-top: -5px;
+}
+
+a:link{
+	color: #fff;
+}
+a:active{
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+a:hover{
+	color: #fff !important;
+	font-size: 17px;
+	font-weight: bold !important;
+}
+.initPassword{
+	border-radius: 3px;
+}
+.quit{
+	font-size: 16px;
+	color: #fff;
+	float: right;
+	margin: 14px 40px;
+}
+.person{
+	display: flex !important;
+	align-items: center !important;
+}
+textarea{
+	resize: none;/* 不可调长度*/
+}
+#warning{
+	height: 20px;
+	color: red;
+	text-align: center;
+}
+.edit{
+	color: #00635a;
+	border: none;
+	background-color: #fff;
+}
+.delete{
+	color: #00635a;
+	border: none;
+	background-color: #fff;
+}
+.border_right{
+	border-right: 0.2px solid #00635a;
+}
+.introduction2 {
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis; /*(超出部分用省略号...)*/
+	white-space: nowrap;
+}
+.showMany{
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.howMany{
+	margin: 0 5px;
+	padding: 5px 10px;
+	border: 2px solid #ccc;
+	border-radius:2px;
+}
+select:hover select:focus{
+	border: 2px solid #009688;
+}
+.paging{
+	margin: 10px auto !important;
+	
+}
+.paging td {
+	padding: 10px 20px;
+	border: 1.5px solid #ccc !important; 
+}
+.paging td:hover {
+	background: #ddd;
+}

@@ -1,0 +1,68 @@
+member_height{
+	height: 600px !important;
+}
+.quit{
+	font-size: 16px;
+	color: #fff;
+	float: right;
+	margin: 14px 40px;
+}
+.person{
+	display: flex !important;
+	align-items: center !important;
+}
+
+.inline_block{
+	display: inline-block !important;
+}
+.add{
+	border-radius: 5px !important;
+}
+.dialogAdd{
+	width: 500px;
+	height: 430px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+}
+.type{
+	margin: 5px 0px !important; 
+}
+.middle{
+	display: inline-block !important;
+	width: 177px !important;
+	margin-bottom: 10px;
+}
+.sex{
+	margin-top: 10px !important;
+	margin-left: 15px !important;
+}
+#addWarning{
+	color: red;
+	height: 25px;
+}
+.modifyPassword{
+	width: 400px;
+	height: 280px;
+	border: 2px solid #ccc;
+	text-align: center;
+	border-radius: 5px;
+}
+.warning{
+	color: red;
+}
+.margin_bottom{
+	margin-bottom: 15px;
+}
+.margin_left{
+	margin-left: 5px;
+}
+#successSave{
+	color: #007d71;
+	font-weight: bold;
+	font-size: 23px;
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

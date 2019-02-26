@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="member.css">
+    <title>会员管理</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+     <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1>会员管理</h1>
+          </div>
+          <div class="btn btn-primary btn-flat add" id="addMember"><i class="fa fa-lg fa-plus" ></i>增加会员</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <h3 class="card-title" style="font-size: 20px;">会员卡消费</h3>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label class="control-label">会员卡号</label>
+                    <label id="card_idWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="会员卡号（必填）"  id="card_id" />
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label ">消费方式</label>
+                    <label id="typeWarning" class="warning"></label>
+                    <br>
+                    <div class="radio gender inline_block ">
+                      <label>
+                        <input type="radio" name="consumption" value="现金">现金
+                      </label>
+                    </div>
+                    <div class="radio gender inline_block ">
+                      <label>
+                        <input type="radio" name="consumption" value="储值余额">储值余额
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">消费金额</label>
+                    <label id="moneyWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="消费金额（必填）" id="money">
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button id="consumptionSure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button>&nbsp;&nbsp;&nbsp;<button id="consumptionCancel" class="btn btn-default icon-btn" ><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="card member_height">
+              <h3 class="card-title" style="font-size: 20px;">会员卡充值</h3>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label class="control-label">会员卡号 </label>
+                    <label id="recharge_idWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="会员卡号（必填）" id="recharge_id">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">充值金额</label>
+                    <label id="r_moneyWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="充值金额（必填）" id="r_money">
+                  </div>
+                  <div class="form-group" style="visibility:hidden;">
+                    <label class="control-label"></label>
+                    <label  class="warning"></label>
+                    <input class="form-control" type="text" placeholder=""  >
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button id="rechargeSure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>提交</button>&nbsp;&nbsp;&nbsp;<button id="rechargeCancel" class="btn btn-default icon-btn" ><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</button>
+              </div>
+            </div>
+          </div>
+          <div class="clearix"></div> 
+        </div>
+      </div>
+     </div>
+
+      <!--添加会员-->
+          <dialog id="addInformation" class="dialogAdd">
+            <h3>添加会员信息</h3>
+            <div id="addWarning">12</div>
+            <form>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">姓名</label>
+                  <div class="col-md-8 type" >
+                    <input type="text" name="detailAdrress" placeholder="姓名（必填）" class="form-control " id="name">
+                  </div>
+              </div>
+              <div class="form-group person" >
+                    <label class="control-label col-md-3 type">性别</label>
+                    <div class="radio inline_block sex ">
+                      <label>
+                        <input type="radio" name="gender" value="女士" id="woman">女士
+                      </label>
+                    </div>
+                    <div class="radio inline_block sex">
+                      <label>
+                        <input type="radio" name="gender" value="先生" id="man">先生
+                      </label>
+                    </div>
+                  </div>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">电话</label>
+                  <div class="col-md-8 type">
+                    <input type="text" name="detailAdrress" placeholder="电话（必填）" class="form-control " id="phone">
+                  </div>
+              </div>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">邮箱</label>
+                  <div class="col-md-8 type">
+                    <input type="text" name="detailAdrress" placeholder="邮箱（必填）" class="form-control " id="email">
+                  </div>
+              </div>
+              <br>
+              <div class="block" >
+                <button id="sureAdd" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancelAdd"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+            </form>
+          </dialog>
+     <dialog id="loginInformation" class="modifyPassword">
+      <h3>会员信息</h3>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-5">会员登录账号</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="会员登录账号" disabled="disabled" id="loginAccount">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">会员卡号</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="会员卡号" disabled="disabled" id="loginPassword">
+            </div>
+          </div>
+          <div class="warning margin_bottom" >注：会员的初始登录密码与消费密码均为手机号</div>
+          <div >
+                <button id="sure2" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>
+          </div>
+        </form>
+     </dialog>
+     <div id="successSave">
+       <p class="saveWarning"></p>
+    </div>
+    <script type="text/javascript" src="member.js"></script>
+  </body>
+</html>

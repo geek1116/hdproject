@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="goods.css">
+    <script type="text/javascript" src="../js/handlebars-v4.0.11.js"></script>
+    <title>账号信息管理</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+     <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1>商品维护</h1>
+          </div>
+          <div class="btn btn-primary btn-flat add" id="addGoods"><i class="fa fa-lg fa-plus" ></i>增加商品</div>
+        </div>
+        <!--添加商品信息-->
+          <dialog id="addInformation" class="dialogAdd">
+            <h3 id="titleChange"></h3>
+            <div id="warning"></div>
+            <form>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">商品名称</label>
+                  <div class="col-md-8 type">
+                    <input type="text" name="detailAdrress" placeholder="商品名称（必填）" class="form-control " id="name">
+                  </div>
+              </div>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">商品价格</label>
+                  <div class="col-md-8 type">
+                    <input type="text" name="detailAdrress" placeholder="商品价格（必填）" class="form-control " id="price">
+                  </div>
+              </div>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">会员价格</label>
+                  <div class="col-md-8 type">
+                    <input type="text" name="detailAdrress" placeholder="会员价格（必填）" class="form-control " id="vip_price">
+                  </div>
+              </div>
+              <div class="form-group person">
+                  <label class="control-label col-md-3 type">商品介绍</label>
+                  <div class="col-md-8 type">
+                    <textarea  class="form-control" placeholder="商品介绍（选填）" id="introduction"> 
+                    </textarea>
+                  </div>
+              </div>
+              <br>
+              <div class="block" >
+                <button id="sureAdd" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancelAdd"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+            </form>
+          </dialog>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="showMany">
+                  <label>显示</label>
+                  <select class="howMany">
+                    <option value='10'>10</option>
+                    <option value='25'>25</option>
+                    <option value='50'>50</option>
+                    <option value='100'>100</option>
+                  </select>
+                  <label>行</label>
+                </div>
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
+                      <th>产品编号</th>
+                      <th>产品名称</th>
+                      <th>产品价格</th>
+                      <th>会员价格</th>
+                      <th>产品介绍</th>
+                      <th>产品操作</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data">
+                  </tbody>
+                </table>
+                <table class="table-bordered paging">
+                  <tr>
+                    <td id="previous">上一页</td>
+                    <td id="one">1</td>
+                    <td id="two">2</td>
+                    <td id="three">3</td>
+                    <td id="ellipsis">...</td>
+                    <td id="next">下一页</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+     <dialog id="isSure" class="dialogDelete">
+      <label class="isInit">是否要删除此商品？</label>
+       <div >
+            <button id="sureInit" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancelInit"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+          </div>
+    </dialog>
+     <script type="text/template" id="handlebar">
+        {{#each this}}
+          <tr id="product_{{id}}">
+            <td class="product_id">{{id}}</td>
+            <td class="product_name">{{name}}</td>
+            <td class="product_price">{{price}}</td>
+            <td class="product_vip_price">{{vip_price}}</td>
+            <td class="product_introduction introduction2" >{{introduction}}</td>
+            <td id="{{id}}" ><button class="edit border_right" id="edit_{{id}}">编辑</button><button class="delete" id="delete_{{id}}">删除</button></td>
+          </tr>
+        {{/each}}
+      </script>
+    <script type="text/javascript" src="goods.js"></script>
+  </body>
+</html>

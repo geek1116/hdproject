@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="configuration.css">
+    <title>商家资料</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+       <div class="content-wrapper">
+        <div class="page-title ">
+          <div>
+            <h1>商家资料</h1>
+          </div>
+          <div class="btn btn-primary btn-flat add" id="modify2"><i class="fa fa-lg fa-edit" ></i>修改密码</div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <h3 class="card-title" style="font-size: 20px;">企业资料</h3>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label class="control-label">企业类型</label>
+                    <select class="form-control" autofocus id="bus_type">
+                      <option value="娱乐" >娱乐</option>
+                      <option value="旅游">旅游</option>
+                      <option value="购物">购物</option>
+                      <option value="交通">交通</option>
+                      <option value="住宿">住宿</option>
+                      <option value="餐饮">餐饮</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业名称</label>
+                    <label id="bus_nameWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="企业名称（必填）"  id="bus_name" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业地址</label>
+                    <label id="bus_addWarning" class="warning"></label>
+                    <div>
+                      <select id="province" class="form-control middle">
+                      </select> 
+                      <select id="city" class="form-control middle">
+                      
+                      </select>
+                      <select id="district" class="form-control middle">
+                        
+                      </select>
+                      <input type="text" name="detailAdrress" placeholder="详细地址（必填）" class="form-control " id="detail">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业电话</label>
+                    <label id="bus_phoneWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="企业电话（必填）" id="bus_phone">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">邮政编码</label>
+                    <label id="bus_postcodeWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="邮政编码（可选填）" id="bus_postcode">
+                  </div>
+                  
+                </form>
+              </div>
+              <div class="card-footer">
+                <button id="sure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>保存</button>&nbsp;&nbsp;&nbsp;<button  class="btn btn-default icon-btn" id="modify" ><i class="fa fa-fw fa-lg fa-times-circle"></i>修改</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <h3 class="card-title" style="font-size: 20px;">联系人资料</h3>
+              <div class="card-body">
+                <form>
+                   <div class="form-group ">
+                    <label class="control-label ">性别</label>
+                    <label id="con_titleWarning" class="warning"></label>
+                    <div class="radio gender  ">
+                      <label>
+                        <input type="radio" name="gender" value="女士" id="woman">女士
+                      </label>
+                    </div>
+                    <div class="radio gender ">
+                      <label>
+                        <input type="radio" name="gender" value="先生" id="man">先生
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">姓名</label><label id="con_nameWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="姓名（必填）" id="con_name">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">职务</label><label id="con_positionWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="职务（必填）" id="con_position">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">电话</label>
+                    <label id="con_telWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="电话（可选填）" id="con_tel">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">手机</label>
+                    <label id="con_mobileWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="手机（可选填）" id="con_mobile">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">传真</label>
+                    <input class="form-control" type="text" placeholder="传真（可选填）" id="con_fax">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <label id="con_emailWarning" class="warning"></label>
+                    <input class="form-control" type="email" placeholder="Email（必填）" id="con_email">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div id="successSave">
+       <p class="saveWarning">保存成功</p>
+    </div>
+    <dialog id="modifyPassword" class="modifyPassword">
+      <div>
+         <h3 class="margin_bottom">修改密码</h3>
+         <label id="warning" class="warning"></label>
+      </div>
+         <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-5">原密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="原密码" id="oldpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">新密码</label>
+            <div class="col-md-6">
+              <input class="form-control  " type="password" placeholder="新密码" id="newpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">确认密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="确认密码" id="confirm">
+            </div>
+          </div>
+          <div >
+                <button id="sureModify" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancel"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+        </form>
+    </dialog> 
+    <script type="text/javascript" src="configuration.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+[genuitec-file-id="wc1-6"],[genuitec-lp-path="/hdproject/WebRoot/function/loginManager.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.person{
+	display: flex !important;
+	align-items: center !important;
+}
+.type{
+	margin-top: 10px; 
+}
+.block{
+	display: block;
+	margin-top: 75px;
+}
+
+.quit{
+	font-size: 16px;
+	color: #fff;
+	float: right;
+	margin: 14px 40px;
+}
+a:link{
+	color: #fff;
+}
+a:active{
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+a:hover{
+	color: #fff !important;
+	font-size: 17px;
+	font-weight: bold !important;
+}
+table,thead,tbody,tr,th,td{
+	border:2px solid #ccc !important;
+	border-radius: 3px;
+}
+.modifyPassword{
+	width: 400px;
+	height: 320px;
+	border: 2px solid #ccc;
+	text-align: center;
+}
+.warning{
+	margin-bottom: -5px !important;
+	width: 200px;
+	height: 20px;
+	color: red !important;
+}
+.margin_bottom{
+	margin-bottom: 5px !important;
+}
+.add{
+	border-radius: 5px !important;
+}

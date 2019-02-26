@@ -1,0 +1,27 @@
+.sidebar-menu .menuLi{
+	color: #fff ;
+	padding: 15px 20px;
+}
+.gap{
+	margin-left: 15px;
+}
+li{
+	font-size: 18px;
+}
+.treeMenu{
+	padding: 15px -20px !important;
+}
+.selectFunction{
+	background-color: #0c1214;
+	border-left: 3px solid #009688;
+}
+.quit{
+	font-size: 16px !important;
+	color: #fff !important;
+	float: right !important;
+	margin: 14px 40px !important;
+}
+.person{
+	display: flex !important;
+	align-items: center !important;
+}

@@ -1,0 +1,53 @@
+[genuitec-file-id="wc1-14"],[genuitec-lp-path="/hdproject/WebRoot/register/register.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.middle{
+	display: inline-block !important;
+	width: 177px !important;
+	margin-bottom: 10px;
+}
+.gender{
+	display: inline-block !important;
+}
+.block{
+	display: block !important;
+}
+.warning{
+	color: red !important;
+	margin-left: 20px;
+}
+.modifyPassword{
+	width: 400px;
+	height: 320px;
+	border: 2px solid #ccc;
+	text-align: center;
+}
+
+.inline_block{
+	display: inline-block !important;
+}
+.quit{
+	font-size: 16px;
+	color: #fff;
+	float: right;
+	margin: 14px 40px;
+}
+.person{
+	display: flex !important;
+	align-items: center !important;
+}
+#successSave{
+	color: #007d71;
+	font-weight: bold;
+	font-size: 23px;
+	position: absolute;
+	left: 50%;
+	bottom: 20%;
+}
+.add{
+	border-radius: 5px !important;
+}
+.margin_bottom{
+	margin-bottom: 5px !important;
+}
