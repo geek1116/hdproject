@@ -1,0 +1,28 @@
+[genuitec-file-id="wc1-14"],[genuitec-lp-path="/hdproject/WebRoot/register/register.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.middle{
+	display: inline-block !important;
+	width: 177px !important;
+	margin-bottom: 10px;
+}
+.gender{
+	display: inline-block !important;
+}
+.block{
+	display: block !important;
+}
+.margin_top{
+	margin-top: 5px !important;
+}
+.warning{
+	color: red !important;
+	margin-left: 20px;
+}
+.modifyPassword{
+	width: 400px;
+	height: 300px;
+	border: 2px solid #ccc;
+	text-align: center;
+}

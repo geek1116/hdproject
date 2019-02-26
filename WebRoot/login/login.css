@@ -1,0 +1,25 @@
+[genuitec-file-id="wc1-12"],[genuitec-lp-path="/hdproject/WebRoot/login/login.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+.verification{
+	display: flex;
+}
+.verificationCode{
+	width: 80px;
+	height: 40px;
+}
+.verificationImage{
+	display: inline-block;
+	margin-left: 20px;
+	width: 100px;
+	height: 40px;
+	border-radius: 5px;
+}
+.title2{
+	margin: -5px !important;
+}
+.warning{
+	color: red !important;
+	margin-left: 20px;
+}

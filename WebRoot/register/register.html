@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS-->
+    <link rel="stylesheet" type="text/css" href="../login/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <!-- Font-icon css-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <title>加盟申请</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    -->
+  </head>
+  <body class="sidebar-mini fixed" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/hdproject/WebRoot/register/register.html">
+    <div class="wrapper" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc1-15" data-genuitec-path="/hdproject/WebRoot/register/register.html">
+      <!-- Navbar-->
+      <header class="main-header hidden-print">
+        <nav class="navbar navbar-static-top ">
+          <div id="apply" style="color: #fff; margin: 10px 30px; font-size: 20px;">加盟申请</div>
+          <!-- Navbar Right Menu-->
+        </nav>
+      </header>
+      <!-- Side-Nav-->
+      <div class="content-wrapper">
+        <div class="page-title">
+          <div>
+            <h1><i class="fa fa-edit"></i> 资料填写</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <h3 class="card-title" style="font-size: 20px;">企业资料</h3>
+              <div class="card-body">
+                <form>
+                 <div class="form-group">
+                    <label class="control-label">企业类型</label>
+                    <select class="form-control" autofocus id="bus_type">
+                      <option value="娱乐" >娱乐</option>
+                      <option value="旅游">旅游</option>
+                      <option value="购物">购物</option>
+                      <option value="交通">交通</option>
+                      <option value="住宿">住宿</option>
+                      <option value="餐饮">餐饮</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业名称</label>
+                    <label id="bus_nameWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="企业名称（必填）"  id="bus_name" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业地址</label>
+                    <label id="bus_addWarning" class="warning"></label>
+                    <div>
+                      <select id="province" class="form-control middle"></select> 
+                      <select id="city" class="form-control middle"></select>
+                      <select id="district" class="form-control middle"></select>
+                      <input type="text" name="detailAdrress" placeholder="详细地址（必填）" class="form-control " id="detail">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">企业电话</label>
+                    <label id="bus_phoneWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="企业电话（必填）" id="bus_phone">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">邮政编码</label>
+                    <label id="bus_postcodeWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="邮政编码（可选填）" id="bus_postcode">
+                  </div>
+                  
+                </form>
+              </div>
+              <div class="card-footer">
+                <button id="sure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定加盟</button>&nbsp;&nbsp;&nbsp;<a  class="btn btn-default icon-btn" href="../homePage/homePage.html"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消加盟</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <h3 class="card-title" style="font-size: 20px;">联系人资料</h3>
+              <div class="card-body">
+                <form>
+                   <div class="form-group ">
+                    <label class="control-label ">性别</label>
+                    <label id="con_titleWarning" class="warning"></label>
+                    <div class="radio gender margin_top ">
+                      <label>
+                        <input type="radio" name="gender" value="女士">女士
+                      </label>
+                    </div>
+                    <div class="radio gender margin_top">
+                      <label>
+                        <input type="radio" name="gender" value="先生">先生
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">姓名</label><label id="con_nameWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="姓名（必填）" id="con_name">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">职务</label><label id="con_positionWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="职务（必填）" id="con_position">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">电话</label>
+                    <label id="con_telWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="电话（可选填）" id="con_tel">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">手机</label>
+                    <label id="con_mobileWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="手机（可选填）" id="con_mobile">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">传真</label>
+                    <input class="form-control" type="text" placeholder="传真（可选填）" id="con_fax">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <label id="con_emailWarning" class="warning"></label>
+                    <input class="form-control" type="email" placeholder="Email（必填）" id="con_email">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">验证码</label>
+                    <label id="verificationCodeWarning" class="warning"></label>
+                    <div class="verification">
+                      <input class="form-control verificationCode" type="text" placeholder="验证码（必填）" id="verificationCode" />
+                      <img class="verificationImage" src="../general/verificationCode" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+          <div class="clearix"></div> 
+        </div>
+      </div>
+    </div>
+    <dialog id="loginInformation" class="modifyPassword">
+      <h3>登录信息</h3>
+         <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-4">登录账号</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="登录账号" disabled="disabled" id="loginAccount">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-4">登录密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="text" placeholder="登录密码" disabled="disabled" id="loginPassword">
+            </div>
+          </div>
+          <div >
+                <button id="sure2" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>进入登录界面</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancel2"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+          </div>
+        </form>
+    </dialog>
+    <!-- Javascripts-->
+    <script type="text/javascript" src="register.js"></script>
+  </body>
+</html>
