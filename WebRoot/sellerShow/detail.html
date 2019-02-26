@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商家详情</title>
+		<link rel="stylesheet" type="text/css" href="detail.css">
+		<link rel="stylesheet" type="text/css" href="sellerShow.css">
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript" src="../js/handlebars-v4.0.11.js"></script>
+	</head>
+	<body>
+		<div class="rowFlex seller">
+			<div class="rowFlex">
+				<img src="../image/girl.jpg" width="80" height="80">
+				<div class="information">
+					<div id="name_id" class="shop middle"></div>
+					<div id="phone_id" class="phone"></div>
+					<div id="address_id" class="address small"></div>
+				</div>
+			</div>
+			<div class="shop middle">评分：<span id="grade_id"></span></div>
+		</div>
+		<div class="contentBox">
+			<div class="rowFlex select small">
+				<div class="selectBox selected" id="allGoods">商品</div>
+				<div class="selectBox noSelect" id="allReview">评价</div>
+			</div>
+			<div id="content">
+			</div>
+			<div id="loadFinish">加载完成</div>
+		</div>
+		<script type="text/template" id="handlebarGoods">
+			{{#each this}}
+				<div class="rowFlex item Abox">
+				<div class="rowFlex">
+					<img src="../image/goods.jpg" width="80" height="80">
+					<div class="information">
+						<div class="shop middle">{{name}}</div>
+						<div class="phone ">价格：<span>￥{{price}}</span></div>
+						<div class="address middle">会员价：￥{{vip_price}}</div>
+					</div>
+				</div>
+				<div class="small"></span>{{introduction}}</div>
+			</div>
+			{{/each}}
+		</script>
+		<script type="text/template" id="handlebarReview">
+			{{#each this}}
+				<div class="rowFlex item Abox">
+					<div class="rowFlex">
+						<img src="../image/review.jpg" width="80" height="80">
+						<div class="information">
+							<div class="shop middle">消费编号：{{c_id}}</div>
+							<div class="phone small rowFlex"><span>评分：</span>
+								<img src="{{src0}}" width='20' height='20'>
+								<img src="{{src1}}" width='20' height='20'>
+								<img src="{{src2}}" width='20' height='20'>
+								<img src="{{src3}}" width='20' height='20'>
+								<img src="{{src4}}" width='20' height='20'>
+							</div>
+							<div class="address small">日期：{{date}}</div>
+						</div>
+					</div>
+					<div class="small"></span>{{content}}</div>
+				</div>
+			{{/each}}
+		</script>
+	</body>
+	<script type="text/javascript" src="detail.js"></script>
+</html>

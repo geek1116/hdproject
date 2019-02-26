@@ -1,0 +1,133 @@
+body {
+  	margin: 0;
+   	font-family: '幼圆' !important;
+}
+button{
+	font-family: '幼圆' !important;
+}
+.head{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	z-index: 999;
+	background: #000;
+	width: 100%;
+	padding: 22px 110px;
+	box-sizing: border-box;
+}
+.headText{
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+.searchBox{
+	display: flex;
+	align-items: center;
+	box-sizing:border-box;
+}
+.searchBox button{
+	margin: 0px;
+	padding: 5.7px 15px;
+	border: none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: #009688;
+	color: #fff;
+	box-sizing:border-box;
+}
+.searchBox input{
+	padding: 5px 15px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border: none;
+	box-sizing:border-box;
+}
+
+.show{
+	position: relative;
+	left: 110px;
+	top: 100px;
+	width: 1060px;
+	box-sizing: border-box;
+}
+.type{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1060px;
+	padding: 5px;
+	color: #009688;
+	box-sizing: border-box;
+}
+.big{
+	font-size: 25px;
+}
+.small{
+	font-size: 15px;
+}
+.middle{
+	font-size: 20px;
+}
+.goods{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 1060px;
+	padding: 20px 0px;
+	box-sizing: border-box;
+}
+.rowFlex{
+	display: flex;
+}
+.information{
+	margin: 3px 20px;
+}
+.shop{
+	color: #009688;
+}
+.phone{
+	color: gray;
+	margin: 5px 0px;
+}
+.address{
+	margin-top: 18px;
+	width: 250px
+}
+.review{
+	color: red;
+}
+.detail{
+	background: #009688;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 10px;
+	color: #fff;
+}
+.border_style{
+	border-bottom: 1px dotted #009688;
+}
+.boreder_bottom{
+	border-bottom: 2px solid #009688;
+}
+a{
+	color: #009688;
+	text-decoration: none !important;
+}
+a:hover{
+	font-weight: bold;
+}
+a:focus{
+	font-weight: bold;
+}
+#loadFinish{
+	width: 100%;
+	background: #009688;
+	color: #fff;
+	margin: 10px 0px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 5px;
+	box-sizing: border-box;
+}

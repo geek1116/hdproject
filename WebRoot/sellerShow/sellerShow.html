@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>系统首页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0;maximum-scale=1.0;">
+	<link rel="stylesheet" type="text/css" href="sellerShow.css">
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/handlebars-v4.0.11.js"></script>
+	<body>
+		<div class="head">
+			<span class="headText">系统首页</span>
+			<div class="searchBox">
+				<input type="text" name="search" placeholder="搜索商家" id="searchName" class="small">
+				<button id="search" class="small">搜索</button>
+			</div>
+		</div>
+		<div id="showGoods" class="show">
+			<div >
+				<div class="type boreder_bottom">
+					<div class="big">娱乐</div>
+					<a class="small" id="funMore" href="more.html">更多>></a>
+				</div>
+				<div id="fun"></div>
+			</div>
+			<br><br><br>
+			<div>
+				<div class="type boreder_bottom">
+					<div class="big">旅游</div>
+					<a class="small" id="travelMore" href="more.html" >更多>></a>
+				</div>
+				<div id="travel"></div>
+			</div>
+			<br><br><br>
+			<div>
+				<div class="type boreder_bottom">
+					<div class="big">购物</div>
+					<a class="small" id="shoppingMore" href="more.html" >更多>></a>
+				</div>
+				<div id="shopping"></div>
+			</div>
+			<br><br><br>
+			<div>
+				<div class="type boreder_bottom">
+					<div class="big">交通</div>
+					<a class="small" id="trafficMore" href="more.html" >更多>></a>
+				</div>
+				<div id="traffic"></div>
+			</div>
+			<br><br><br>
+			<div>
+				<div class="type boreder_bottom">
+					<div class="big">住宿</div>
+					<a class="small" id="accommodationMore" href="more.html" >更多>></a>
+				</div>
+				<div id="accommodation"></div>
+			</div>
+			<br><br><br>
+			<div>
+				<div class="type boreder_bottom">
+					<div class="big">餐饮</div>
+					<a class="small" id="foodMore" href="more.html">更多>></a>
+				</div>
+				<div id="food"></div>
+			</div>
+		</div>
+		<script type="text/template" id="handlebarFun">
+			{{#each this}}
+			<div class="goods border_style">
+				<div class="rowFlex">
+					<div >
+						<img src="../image/girl.jpg" width="90" height="90">
+					</div>
+					<div class="information">
+						<div class="shop middle" id="name_{{id}}">{{b_name}}</div>
+						<div class="phone" id="phone_{{id}}">咨询电话：{{b_telephone}}</div>
+						<div class="address small" id="address_{{id}}">{{address}}</div>
+					</div>
+				</div>
+				<div class="review middle">评分：<span id="grade_{{id}}"></span>分</div>
+				<div>
+					<button class="detail small" id="{{id}}">查看详情</button>
+				</div>
+			</div>
+			{{/each}}
+		</script>
+  		<script type="text/javascript" src="sellerShow.js"></script>
+	</body>
+</html>

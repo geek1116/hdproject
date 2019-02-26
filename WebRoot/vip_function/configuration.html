@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="configuration.css">
+    <title>会员资料</title>
+  </head>
+  <body class="sidebar-mini fixed" >
+       <div class="content-wrapper">
+        <div class="page-title ">
+          <div>
+            <h1>会员资料</h1>
+          </div>
+          <div>
+            <div class="btn btn-primary btn-flat add" id="modify2"><i class="fa fa-lg fa-edit" ></i>修改登录密码</div>
+            <div class="btn btn-primary btn-flat add" id="modifyComsume"><i class="fa fa-lg fa-edit" ></i>修改消费密码</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label class="control-label">姓名</label><label id="nameWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="姓名（必填）" id="name">
+                  </div>
+                  <div class="form-group ">
+                    <label class="control-label ">性别</label>
+                    <label id="sexWarning" class="warning"></label>
+                    <br>
+                    <div class="radio gender ">
+                      <label>
+                        <input type="radio" name="gender" value="女士" id="woman">女士
+                      </label>
+                    </div>
+                    <div class="radio gender ">
+                      <label>
+                        <input type="radio" name="gender" value="先生" id="man">先生
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">手机</label>
+                    <label id="phoneWarning" class="warning"></label>
+                    <input class="form-control" type="text" placeholder="手机（必填）" id="phone">
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <label id="emailWarning" class="warning"></label>
+                    <input class="form-control" type="email" placeholder="Email（必填）" id="email">
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button id="sure" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>保存</button>&nbsp;&nbsp;&nbsp;<button  class="btn btn-default icon-btn" id="modify" ><i class="fa fa-fw fa-lg fa-times-circle"></i>修改</button>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div id="successSave">
+       <p class="saveWarning2">保存成功</p>
+    </div>
+    <dialog id="modifyPassword" class="modifyPassword">
+      <div>
+         <h3 class="margin_bottom" id="pwd"></h3>
+         <label id="warning" class="warning"></label>
+      </div>
+         <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-md-5">原密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="原密码" id="oldpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">新密码</label>
+            <div class="col-md-6">
+              <input class="form-control  " type="password" placeholder="新密码" id="newpsd">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-5">确认密码</label>
+            <div class="col-md-6">
+              <input class="form-control " type="password" placeholder="确认密码" id="confirm">
+            </div>
+          </div>
+          <div >
+                <button id="sureModify" class="btn btn-primary icon-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>确定</button>&nbsp;&nbsp;&nbsp;<label class="btn btn-default icon-btn" id="cancel"><i class="fa fa-fw fa-lg fa-times-circle"></i>取消</label> 
+              </div>
+        </form>
+    </dialog> 
+    <script type="text/javascript" src="configuration.js"></script>
+  </body>
+</html>

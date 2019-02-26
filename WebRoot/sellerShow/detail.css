@@ -1,0 +1,47 @@
+.rowFlex{
+	display: flex;
+}
+.seller{
+	width: 900px;
+	margin: 0px 190px;
+	padding: 10px 0px;
+	align-items: center;
+	justify-content: space-around;
+	box-sizing: border-box;
+}
+.select{
+	width: 100%;
+	box-sizing: border-box;
+	background: #009688;
+}
+.contentBox{
+	border: 1px solid #007d71;
+	width: 900px;
+	margin: 0px 190px;
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+.select .selectBox{
+	padding: 10px 30px;
+}
+.select .selected{
+	background: #fff;
+	color: #000;
+}
+.select .noSelect{
+	background: #009688;
+	color: #fff;
+	border: 1px solid #007d71;
+}
+#content{
+	margin: 10px 5px;
+}
+.item{
+	padding: 10px 30px;
+	align-items: center;
+}
+.Abox{
+	box-sizing: border-box;
+	margin: 30px;
+	border-bottom: 1px dotted #009688;
+}

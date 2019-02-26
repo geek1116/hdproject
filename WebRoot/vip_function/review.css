@@ -1,0 +1,9 @@
+.gradeBox{
+	display: flex;
+	align-items: center;
+}
+.grade{
+	display: inline-block;
+	margin: 20px;
+	font-size: 19px;
+}
